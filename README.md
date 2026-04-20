@@ -6,11 +6,11 @@ An interactive explorer for understanding Retrieval-Augmented Generation (RAG) f
 
 A Streamlit app that lets you upload a PDF and ask it questions, while showing you **exactly** what happens at each step of the RAG pipeline. The purpose is to de-mistify RAG and to play around with paramaters to truly understand what is going on in under the hood:
 
-1. **Chunking** — the document is split into overlapping text segments
-2. **Embedding** — each chunk is mapped to a 384-dimensional vector using `all-MiniLM-L6-v2`
-3. **Retrieval** — your question is embedded into the same vector space, and FAISS finds the `k` nearest chunks by L2 distance
-4. **Prompt construction** — the retrieved chunks are concatenated as context alongside your question
-5. **Generation** — a local LLM (via Ollama) produces an answer grounded in the retrieved context
+1. **Chunking** - the document is split into overlapping text segments
+2. **Embedding** - each chunk is mapped to a 384-dimensional vector using `all-MiniLM-L6-v2`
+3. **Retrieval** - your question is embedded into the same vector space, and FAISS finds the `k` nearest chunks by L2 distance
+4. **Prompt construction** - the retrieved chunks are concatenated as context alongside your question
+5. **Generation** - a local LLM (via Ollama) produces an answer grounded in the retrieved context
 
 You can interactively adjust chunk size, overlap, and `k` to see how each parameter affects retrieval quality and answer accuracy.
 
@@ -18,7 +18,7 @@ You can interactively adjust chunk size, overlap, and `k` to see how each parame
 
 LLMs only know what was in their training data. RAG solves this by retrieving relevant passages from your own documents and injecting them into the prompt at inference time.
 
-The key insight: **the LLM never sees vectors**. Vector search is a filtering step that selects which text chunks to include in the prompt. The model receives plain text — it has no idea that similarity search happened further upstream.
+The key insight: **the LLM never sees vectors**. Vector search is a filtering step that selects which text chunks to include in the prompt. The model receives plain text - it has no idea that similarity search happened further upstream.
 
 ```
 Documents → Chunks → Embeddings → FAISS Index
@@ -53,7 +53,7 @@ To use a different Ollama model, just type its name in the sidebar (e.g. `mistra
 ## Tech Stack
 
 - **Embeddings**: `sentence-transformers` (all-MiniLM-L6-v2)
-- **Vector search**: FAISS (IndexFlatL2 — exact nearest neighbours)
+- **Vector search**: FAISS (IndexFlatL2 - exact nearest neighbours)
 - **Text splitting**: `langchain-text-splitters` (RecursiveCharacterTextSplitter)
 - **PDF extraction**: PyMuPDF
 - **LLM inference**: Ollama (local)

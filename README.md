@@ -30,7 +30,7 @@ Query → Embed → Nearest Neighbours → Text Chunks → Prompt → LLM → An
 
 ```bash
 # Clone and install
-git clone <your-repo-url>
+git clone <https://github.com/JMiller488/RAG-from-first-principles>
 cd rag-from-scratch
 python -m venv .venv
 .venv\Scripts\Activate  # Windows
@@ -38,7 +38,7 @@ python -m venv .venv
 pip install -r requirements.txt
 
 # Install and start Ollama (https://ollama.com)
-ollama pull tinyllama  # or mistral if you have 8GB+ RAM
+ollama pull tinyllama 
 
 # Run
 streamlit run app.py
@@ -46,7 +46,7 @@ streamlit run app.py
 
 ## LLM Backend
 
-The app defaults to **TinyLlama** via Ollama for cost and memory purposes. The LLM used here is not important. The same retrieved chunks fed to Claude or GPT-4 would produce significantly better answers - but the purpose of this project is not to get accurate answers - it's to easily understand the mechanics of RAG from first principles - so any LLM is fine.
+The app defaults to **TinyLlama** via Ollama for cost and memory purposes. The LLM used here is not important. The same retrieved chunks fed to Claude or GPT-5 would produce significantly better answers - but the purpose of this project is not to get accurate answers - it's to easily understand the mechanics of RAG from first principles - so any LLM is fine.
 
 To use a different Ollama model, just type its name in the sidebar (e.g. `mistral`, `llama3`, `phi3`).
 
@@ -61,7 +61,7 @@ To use a different Ollama model, just type its name in the sidebar (e.g. `mistra
 
 ## Trade-offs & Limitations
 
-- **TinyLlama (1.1B params)** often produces poor answers even with correct retrieval — this is intentional and documented as a teaching point
+- **TinyLlama (1.1B params)** often produces poor answers even with correct retrieval - this is not important
 - **Chunk size** matters: tables and structured data can get split across chunks, losing context
 - **Single-pass retrieval** may miss information spread across distant sections of a document
-- No re-ranking, query decomposition, or hybrid search — this is a from-scratch implementation focused on clarity over production robustness
+- No re-ranking, query decomposition, or hybrid search - this is a from-scratch implementation focused on clarity over production robustness

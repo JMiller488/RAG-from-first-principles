@@ -90,7 +90,7 @@ if uploaded_file:
         # --- Step 4: Show prompt ---
         st.header("Step 4: The Prompt Sent to the LLM")
         st.markdown(
-            "This is the full text that gets sent to the model. "
+            "This is the full text that gets sent to the model "
             "Notice how the retrieved chunks are concatenated as context."
         )
         with st.expander("View full prompt"):

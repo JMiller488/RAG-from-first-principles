@@ -65,3 +65,5 @@ To use a different Ollama model, just type its name in the sidebar (e.g. `mistra
 - **Chunk size** matters: tables and structured data can get split across chunks, losing context
 - **Single-pass retrieval** may miss information spread across distant sections of a document
 - No re-ranking, query decomposition, or hybrid search - this is a from-scratch implementation focused on clarity over production robustness
+
+This project is extended in rag-geometry which adds Pinecone, multi-document ingestion, and PCA visualisation.

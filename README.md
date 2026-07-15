@@ -4,7 +4,7 @@ An interactive explorer for understanding Retrieval-Augmented Generation (RAG) f
 
 ## What This Is
 
-A Streamlit app that lets you upload a PDF and ask it questions, while showing you **exactly** what happens at each step of the RAG pipeline. The purpose is to de-mistify RAG and to play around with paramaters to truly understand what is going on in under the hood:
+A Streamlit app that lets you upload a PDF and ask it questions, while showing you **exactly** what happens at each step of the RAG pipeline. The purpose is to de-mistify RAG and to play around with parameters to truly understand what is going on under the hood:
 
 1. **Chunking** - the document is split into overlapping text segments
 2. **Embedding** - each chunk is mapped to a 384-dimensional vector using `all-MiniLM-L6-v2`

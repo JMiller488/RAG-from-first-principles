@@ -31,7 +31,7 @@ Query → Embed → Nearest Neighbours → Text Chunks → Prompt → LLM → An
 ```bash
 # Clone and install
 git clone https://github.com/JMiller488/RAG-from-first-principles
-cd rag-from-first-principles
+cd RAG-from-first-principles
 python -m venv .venv
 .venv\Scripts\Activate  # Windows
 # source .venv/bin/activate  # Mac/Linux
